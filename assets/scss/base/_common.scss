@@ -1,0 +1,133 @@
+/* Reset CSS */
+*,
+*::before,
+*::after
+{
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+::selection{
+	color: $color-white;
+	background: $color-primary;
+}
+
+html,
+body
+{
+	scroll-behavior: smooth;
+}
+
+html{
+	font-size: 16px;
+	text-size-adjust: none;
+}
+
+body {
+	--bs-body-color: #{$color-black-300};
+	--bs-body-font-weight: 400;
+	--bs-body-font-family: #{$font-primary};
+}
+
+a,
+button
+{
+	color: inherit;
+	font-family: inherit;
+}
+
+a,
+a:hover,
+a:focus,
+a:active
+{
+	color: currentColor;
+	text-decoration: none;
+}
+
+button,
+button:hover,
+button:focus,
+button:active
+{
+	outline: none;
+}
+
+img,
+svg,
+video
+{
+	display: block;
+}
+
+img,
+video
+{
+	object-fit: cover;
+	max-width: 100%;
+}
+
+p{
+	font-size: toRem(14);
+	@include min-md{
+		font-size: toRem(16);
+	}
+}
+
+.preloader{
+	z-index: 99999;
+}
+
+@include min-xxl {
+	.container{
+		max-width: toRem(1240)
+	}
+}
+
+/* Common Section Gap Style */
+.section-gap{
+	--_section-gap: #{toRem(80)};
+	@include max-lg{
+		--_section-gap: #{toRem(60)};
+	}
+	
+	padding: var(--_section-gap) 0;
+	&--fix{
+		padding-bottom: calc(var(--_section-gap) - $gutter);
+	}
+}
+
+/* Common Section Heading Style */
+.section-header{
+	&__title{
+		font-size: toRem(30);
+		@include min-md{
+			font-size: toRem(45);
+		}
+		@include min-lg{
+			font-size: toRem(62);
+		}
+		margin-bottom: toRem(40);
+	}
+}
+
+.match-height > [class*="col"]{
+	display: flex;
+	flex-flow: column;
+}
+
+.match-height > [class*="col"] > *{
+	flex: 1 1 auto;
+}
+
+.text-primary,
+.bg-primary
+{
+	--bs-primary-rgb: #{$color-primary-rgb};
+}
+
+.text-secondary,
+.bg-secondary
+{
+	--bs-secondary-rgb: #{$color-secondary-rgb};
+}

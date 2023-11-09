@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap');
+
+// SCSS Variable's
+$scss-font-primary: 'Cormorant Garamond', serif;
+$scss-font-secondary: 'Figtree', sans-serif;
+
+$scss-color-primary:#fbcd09;
+$scss-color-primary-rgb: toRGB($scss-color-primary);
+$scss-color-secondary:#66695b;
+$scss-color-secondary-rgb: toRGB($scss-color-secondary);
+$scss-color-tertiary:#ada78e;
+$scss-color-tertiary-rgb: toRGB($scss-color-tertiary);
+
+
+// CSS Variable's
+:root{
+    --color-primary: #{$scss-color-primary};
+    --color-primary-rgb: #{$scss-color-primary-rgb};
+    --color-secondary: #{$scss-color-secondary};
+    --color-secondary-rgb: #{$scss-color-secondary-rgb};
+    --color-tertiary: #{$scss-color-tertiary};
+    --color-tertiary-rgb: #{$scss-color-tertiary-rgb};
+
+    --font-primary: #{$scss-font-primary};
+    --font-secondary: #{$scss-font-secondary};
+}
+
+$font-primary: var(--font-primary);
+$font-secondary: var(--font-secondary);
+
+$color-primary: var(--color-primary);
+$color-primary-rgb: var(--color-primary-rgb);
+$color-secondary: var(--color-secondary);
+$color-secondary-rgb: var(--color-secondary-rgb);
+$color-tertiary: var(--color-tertiary);
+$color-tertiary-rgb: var(--color-tertiary-rgb);
+
+$color-black:#000000;
+$color-white:#ffffff;
+
+$color-black-300:#333333;
+$color-white-500:#f5f5f5;
+$color-gray-600:#666666;
+$color-gray-800:#8c8c8c;
+
+$gutter: 28px;
+$transition-ease: cubic-bezier(.21,.01,.21,.96);
