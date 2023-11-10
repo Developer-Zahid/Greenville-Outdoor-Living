@@ -110,7 +110,7 @@ p {
 
 @media (min-width: 1400px) {
   .container {
-    max-width: 77.5rem;
+    max-width: 98.75rem;
   }
 }
 /* Common Section Gap Style */
@@ -124,6 +124,7 @@ p {
   }
 }
 .section-gap--fix {
+  padding-bottom: -moz-calc(var(--_section-gap) - 28px);
   padding-bottom: calc(var(--_section-gap) - 28px);
 }
 
@@ -145,16 +146,23 @@ p {
 
 .match-height > [class*=col] {
   display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-flow: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
 }
 
 .match-height > [class*=col] > * {
   -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+     -moz-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
 }
@@ -167,6 +175,21 @@ p {
 .text-secondary,
 .bg-secondary {
   --bs-secondary-rgb: var(--color-secondary-rgb);
+}
+
+.footer__block__social__link {
+  -webkit-transition: all ease-in-out 0.15s;
+  -o-transition: all ease-in-out 0.15s;
+  -moz-transition: all ease-in-out 0.15s;
+  transition: all ease-in-out 0.15s;
+}
+
+.footer__bottom__text, .footer__block__text, .footer__block__link {
+  font-weight: 300;
+}
+
+.footer__block__title {
+  font-weight: 600;
 }
 
 /* Common Button's Style */
@@ -248,7 +271,130 @@ p {
   background-color: var(--color-secondary);
 }
 
-/* Common Form's Style */
-/* Common Card's Style */
-/* Header Section Style */
-/* Footer Section Style *//*# sourceMappingURL=style.css.map */
+/* Common Form's Style */ /* Common Card's Style */ /* Header Section Style */ /* Footer Section Style */
+.footer {
+  padding-bottom: 1.5625rem;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding-bottom: 3.125rem;
+  }
+}
+.footer__top {
+  padding-top: 3.125rem;
+  padding-bottom: 0.625rem;
+}
+@media (min-width: 768px) {
+  .footer__top {
+    padding-top: 3.75rem;
+    padding-bottom: 1.25rem;
+  }
+}
+@media (min-width: 1200px) {
+  .footer__top {
+    padding-top: 6.25rem;
+    padding-bottom: 5rem;
+  }
+}
+.footer__block {
+  margin-bottom: 28px;
+}
+.footer__block__logo {
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 768px) {
+  .footer__block__logo {
+    margin-bottom: 1.875rem;
+  }
+}
+.footer__block__logo__image {
+  max-height: 3.75rem;
+}
+@media (min-width: 768px) {
+  .footer__block__logo__image {
+    max-height: 4.375rem;
+  }
+}
+@media (min-width: 1200px) {
+  .footer__block__logo__image {
+    max-height: 5.625rem;
+  }
+}
+.footer__block__text, .footer__block__link {
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+}
+@media (min-width: 768px) {
+  .footer__block__text, .footer__block__link {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 1200px) {
+  .footer__block__text, .footer__block__link {
+    font-size: 1.25rem;
+  }
+}
+.footer__block__title {
+  color: var(--color-tertiary);
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__block__title {
+    font-size: 2.5rem;
+    margin-bottom: 1.75rem;
+  }
+}
+.footer__block__link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+@media (min-width: 1200px) {
+  .footer__block__link {
+    margin-bottom: 1.25rem;
+  }
+}
+.footer__block__link:hover, .footer__block__link:focus {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.footer__block__social {
+  gap: 0.9375rem;
+}
+.footer__block__social__link {
+  color: #ffffff;
+  font-size: 1.25rem;
+  padding: 2px;
+}
+.footer__block__social__link:hover, .footer__block__social__link:focus {
+  color: var(--color-primary);
+}
+.footer__bottom {
+  background-color: var(--color-tertiary);
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+}
+.footer__bottom__text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-family: var(--font-secondary);
+}
+@media (min-width: 768px) {
+  .footer__bottom__text {
+    font-size: 1.125rem;
+  }
+}
+.footer__bottom__text__link:hover, .footer__bottom__text__link:focus-visible {
+  text-decoration: underline;
+}/*# sourceMappingURL=style.css.map */

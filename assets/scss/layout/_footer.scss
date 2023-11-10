@@ -1,1 +1,126 @@
 /* Footer Section Style */
+.footer{
+    padding-bottom: toRem(25);
+    @include min-md{
+        padding-bottom: toRem(50);
+    }
+
+    &__top{
+        padding-top: toRem(50);
+        padding-bottom: toRem(10);
+        @include min-md{
+            padding-top: toRem(60);
+            padding-bottom: toRem(20);
+        }
+        @include min-xl{
+            padding-top: toRem(100);
+            padding-bottom: toRem(80);
+        }
+    }
+
+    &__block{
+        margin-bottom: $gutter;
+
+        &__logo{
+            margin-bottom: toRem(20);
+            @include min-md{
+                margin-bottom: toRem(30);
+            }
+
+            &__image{
+                max-height: toRem(60);
+                @include min-md{
+                    max-height: toRem(70);
+                }
+                @include min-xl{
+                    max-height: toRem(90);
+                }
+            }
+        }
+
+        &__text,
+        &__link
+        {
+            color: $color-white;
+            font-size: toRem(16);
+            @include min-md{
+                font-size: toRem(18);
+            }
+            @include min-xl{
+                font-size: toRem(20);
+            }
+            @extend %fw-light;
+            font-family: $font-secondary;
+        }
+
+        &__title{
+            color: $color-tertiary;
+            @extend %fw-semibold;
+            font-size: toRem(30);
+            margin-bottom: toRem(16);
+            @include min-md{
+                font-size: toRem(40);
+                margin-bottom: toRem(28);
+            }
+        }
+        
+        &__link{
+            display: flex;
+            align-items: center;
+            gap: toRem(10);
+            margin-bottom: toRem(10);
+            @include min-xl{
+                margin-bottom: toRem(20);
+            }
+
+            &:hover,
+            &:focus
+            {
+                color: $color-white;
+                text-decoration: underline;
+            }
+        }
+
+        &__social{
+            gap: toRem(15);
+
+            &__link{
+                color: $color-white;
+                font-size: toRem(20);
+                padding: 2px;
+                @extend %transition;
+
+                &:hover,
+                &:focus
+                {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__bottom{
+        background-color: $color-tertiary;
+        padding-top: toRem(30);
+        padding-bottom: toRem(30);
+
+        &__text{
+            color: $color-white;
+            font-size: toRem(14);
+            @include min-md{
+                font-size: toRem(18);
+            }
+            @extend %fw-light;
+            font-family: $font-secondary;
+
+            &__link{
+                &:hover,
+                &:focus-visible
+                {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+}
