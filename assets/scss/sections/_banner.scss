@@ -1,26 +1,52 @@
 /* Banner Section Style */
 .banner{
-    padding-top: toRem(100);
+    min-height: calc(var(--vh) * 100);
+    padding-top: toRem(90);
+    padding-bottom: toRem(90);
+    transition: min-height .3s $transition-ease;
+    @extend %isolation;
 
-    &__title{
-        font-size: toRem(35);
-        @include min-sm{
-            font-size: toRem(50);
-        }
-        @include min-md{
-            font-size: toRem(70);
-        }
-
-        font-weight: 700;
-        margin-bottom: toRem(20);
+    @include max-md{
+        text-align: center;
     }
 
-    &__text{
-        font-size: toRem(16);
-        @include min-md{
-            font-size: toRem(18);
+    &__sub-title,
+    &__title
+    {
+        color: $color-white;
+        text-transform: capitalize;
+        
+        &__text{
+            @include max-xs{
+                padding: toRem(5);
+            }
+            @include min-sm{
+                padding: toRem(10);
+                display: inline-block;
+            }
+            @include min-lg{
+                padding-right: toRem(50);
+            }
         }
 
-        font-weight: 500;
+    }
+
+    &__sub-title{
+        font-style: italic;
+        font-size: clamp(toRem(25), 6vw, toRem(100));
+        
+        &__text{
+            background-color: rgba($color-tertiary-rgb, 0.8);
+        }
+    }
+
+    &__title{
+        font-size: clamp(toRem(50), 7vw, toRem(120));
+        @extend %fw-semibold;
+        margin-bottom: toRem(12);
+
+        &__text{
+            background-color: rgba($color-secondary-rgb, 0.8);
+        }
     }
 }

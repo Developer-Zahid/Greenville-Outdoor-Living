@@ -1,19 +1,23 @@
 /* Common Button's Style */
 .btn{
+	--bs-btn-color: #{$color-black-300};
 	--bs-btn-padding-y: #{toRem(10)};
 	--bs-btn-padding-x: #{toRem(25)};
-	--bs-btn-font-size: #{toRem(14)};
-	--bs-border-radius: #{toRem(8)};
+	--bs-btn-font-size: #{toRem(22)};
+	--bs-border-radius: 0;
 	@include min-md{
 		--bs-btn-padding-y: #{toRem(15)};
 		--bs-btn-padding-x: #{toRem(30)};
-		--bs-btn-font-size: #{toRem(18)};
-		--bs-border-radius: #{toRem(15)};
+		--bs-btn-font-size: #{toRem(35)};
 	}
 	--bs-btn-font-family: #{$font-primary};
 	--bs-btn-font-weight: 600;
 	--bs-btn-line-height: 1;
 	box-shadow: none !important;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: toRem(12);
 
 	&-sm{
 		--bs-btn-padding-y: #{toRem(10)};
@@ -22,7 +26,7 @@
 	}
 
 	&__icon{
-		margin-right: toRem(10);
+		font-size: 110%;
 	}
 }
 
@@ -30,9 +34,9 @@
 	--bs-btn-bg: #{$color-primary};
 	--bs-btn-border-color: #{$color-primary};
 
-	--bs-btn-hover-color: #{$color-primary};
-	--bs-btn-hover-bg: transparent;
-	--bs-btn-hover-border-color: #{$color-primary};
+	--bs-btn-hover-color: #{$color-white};
+	--bs-btn-hover-bg: #{$color-secondary};
+	--bs-btn-hover-border-color: var(--bs-btn-hover-bg);
 
 	--bs-btn-active-color: var(--bs-btn-hover-color);
 	--bs-btn-active-bg: var(--bs-btn-hover-bg);

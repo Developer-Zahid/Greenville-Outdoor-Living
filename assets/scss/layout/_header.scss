@@ -1,1 +1,17 @@
 /* Header Section Style */
+.header{
+    transition: background-color .2s $transition-ease;
+
+    &.sticky{
+        background-color: $color-secondary;
+    }
+
+    .navbar-brand__image{
+        @include max-xl{
+            max-height: toRem(70);
+        }
+        @include max-sm{
+            max-height: toRem(50);
+        }
+    }
+}

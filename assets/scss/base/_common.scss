@@ -8,7 +8,7 @@
 }
 
 ::selection{
-	color: $color-white;
+	color: $color-black-300;
 	background: $color-primary;
 }
 
@@ -67,19 +67,13 @@ video
 	max-width: 100%;
 }
 
-p{
-	font-size: toRem(14);
-	@include min-md{
-		font-size: toRem(16);
-	}
-}
 
 .preloader{
 	z-index: 99999;
 }
 
 @include min-xxl {
-	.container{
+	.container-xxl{
 		max-width: toRem(1580)
 	}
 }
@@ -130,4 +124,20 @@ p{
 .bg-secondary
 {
 	--bs-secondary-rgb: #{$color-secondary-rgb};
+}
+
+.full-background{
+	@extend %full-width;
+	z-index: -1;
+	margin-bottom: 0;
+
+	&::after{
+		@extend %full-width;
+		@extend %common-pseudo;
+		background-color: rgba($color-black, $alpha: 0.33);
+	}
+
+	&__preview{
+		@extend %full-width;
+	}
 }

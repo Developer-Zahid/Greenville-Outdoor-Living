@@ -1,6 +1,6 @@
 /* 
 --------------------------------------------------------------------
-Template Name: 	    Hop | Hop Business Landing Page
+Template Name: 	    Greenville Outdoor Living
 Version:            1.00
 Author:             Zahid Hasan Munna | Developer Zahid
 Author Occupation: 	Frontend Web Design & Developer
@@ -22,13 +22,13 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 		}
 	}
 
-	function headerHeightFixer(){
-		$('.header-height-fix').css('height', $('header').innerHeight() +'px')
-		$('html').css('--header-size', $('header').innerHeight() +'px')
-	}
-
 	function getScrollbarWidth(){
 		return (window.innerWidth - $(document).width())
+	}
+
+	function calculateVerticalHeight() {
+		var vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', vh + 'px');
 	}
 
 	/* Window on load Event */
@@ -38,14 +38,8 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 	
 	/* Document on ready Event */
 	$(document).ready(function () {
+		calculateVerticalHeight()
 		getScrollbarWidth()
-
-		$('header').before('<div class="header-height-fix"></div>')
-		headerHeightFixer()
-
-		$('.navbar__nav__dropdown-menu').each(function(index, item){
-			$(this).css('--_height', item.getBoundingClientRect().top + item.getBoundingClientRect().height + 'px')
-		})
 
 		$('[data-toggle="menu"').on('click', function(){
 			if($(this).hasClass('active')){
@@ -63,27 +57,22 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 			}
 		})
 
-		if(window.matchMedia("(max-width: 991.98px)").matches){
-			$('.navbar__nav__link').on('click', function(){
-				if($(this).hasClass('show')){
-					$(this).removeClass('show')
-					$(this).siblings('.navbar__nav__dropdown-menu').slideUp()
-				}else{
-					$(this).addClass('show')
-					$(this).siblings('.navbar__nav__dropdown-menu').slideDown()
-				}
-			})
-		}
 	})
 
 	/* Window on scroll Event */
 	$(window).on("scroll", function () {
-		var scrolling = $(this).scrollTop();
-		if (scrolling > 200) {
+		let scrolling = $(this).scrollTop();
+		const maxHeaderScroll = 100
+		if (scrolling > maxHeaderScroll) {
 			$(".header").addClass('sticky');
 		} else {
 			$(".header").removeClass('sticky');
 		}
-	});
+	})
+
+	/* Window on resize Event */
+	$(window).on('resize', function () {
+		calculateVerticalHeight()
+    })
 
 })(jQuery)

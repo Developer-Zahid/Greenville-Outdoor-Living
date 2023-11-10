@@ -48,37 +48,48 @@
 	</div> -->
 
 	<!-- Header Section -->
-	<header class="header fixed-top bg-secondary">
+	<header class="header fixed-top">
 		<nav class="navbar">
-			<div class="container">
+			<div class="container-xxl">
 				<a class="navbar-brand" href="./">
-					<img class="navbar-brand__image" src="./assets/images/logo/logo.png" alt="logo">
+					<img class="navbar-brand__image img-fluid" src="./assets/images/logo/logo.png" alt="logo" height="90">
 				</a>
 				<button type="button" class="navbar__toggler" data-toggle="menu">
-					<span class="navbar__toggler__bar"></span>
-					<span class="navbar__toggler__bar"></span>
+					<i class="fa-solid fa-bars"></i>
 				</button>
 			</div>
 		</nav>
 	</header>
 
-	<section class="banner min-vh-100">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h1>Hello</h1>
-				</div>
-			</div>
+	<!-- Banner Section -->
+	<section class="banner position-relative d-flex">
+		<figure class="full-background">
+			<img class="full-background__preview" src="./assets/images/pages/home/banner.png" alt="banner" loading="lazy">
+		</figure>
+		<div class="container-xxl my-auto">
+			<h1 class="banner__sub-title">
+				<span class="banner__sub-title__text">Welcome to</span>
+			</h1>
+			<h2 class="banner__title">
+				<span class="banner__title__text">Greenville Outdoor Living</span>
+			</h2>
+			<a href="#!" class="btn btn-primary">
+				Request a Free Quote
+				<svg class="btn__icon" width="1em" height="0.5em" viewBox="0 0 40 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M39.7356 10.3578L30.6449 1.267C30.3184 0.885676 29.7445 0.841224 29.3632 1.16786C28.9818 1.49442 28.9374 2.06831 29.264 2.44963C29.2945 2.48518 29.3276 2.51838 29.3632 2.54877L36.8993 10.0941H0.909046C0.407024 10.0941 0 10.5011 0 11.0032C0 11.5053 0.407024 11.9123 0.909046 11.9123H36.8993L29.3632 19.4485C28.9818 19.775 28.9374 20.3489 29.264 20.7302C29.5906 21.1116 30.1645 21.156 30.5458 20.8294C30.5813 20.7989 30.6145 20.7658 30.6449 20.7302L39.7357 11.6395C40.0881 11.285 40.0881 10.7124 39.7356 10.3578Z" fill="currentColor"/>
+				</svg> 
+			</a>
 		</div>
 	</section>
 
+	<!-- Footer Section -->
 	<footer class="footer bg-secondary">
 		<div class="footer__top">
-			<div class="container">
+			<div class="container-xxl">
 				<div class="row justify-content-xl-between">
 					<div class="col-xl-4">
 						<div class="footer__block">
-							<a href="#!" class="footer__block__logo d-inline-block">
+							<a href="./" class="footer__block__logo d-inline-block">
 								<img class="footer__block__logo__image" src="./assets/images/logo/logo.png" alt="logo" height="90" loading="lazy">
 							</a>
 							<p class="footer__block__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ornare scelerisque erat vel rutrum. Duis sem enim, tempor sed gravida imperdiet, bibendum .</p>
@@ -150,7 +161,9 @@
 			</div>
 		</div>
 		<div class="footer__bottom">
-			<p class="footer__bottom__text text-center mb-0">Copyright © 2023 <a href="#!" class="footer__bottom__text__link">Greenville Outdoor Living</a>, All rights reserved.</p>
+			<div class="container-xxl">
+				<p class="footer__bottom__text text-center mb-0">Copyright © 2023 <a href="#!" class="footer__bottom__text__link">Greenville Outdoor Living</a>, All rights reserved.</p>
+			</div>
 		</div>
 	</footer>
 
