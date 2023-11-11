@@ -31,6 +31,10 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 		document.documentElement.style.setProperty('--vh', vh + 'px');
 	}
 
+	function calculateHeaderHeight(){
+		$('html').css('--header-size', $('header').innerHeight() +'px')
+	}
+
 	/* Window on load Event */
 	$(window).on('load', function () {
         preLoader()
@@ -39,18 +43,19 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 	/* Document on ready Event */
 	$(document).ready(function () {
 		calculateVerticalHeight()
+		calculateHeaderHeight()
 		getScrollbarWidth()
 
 		$('[data-toggle="menu"').on('click', function(){
 			if($(this).hasClass('active')){
 				$(this).removeClass('active')
-				$('.header').removeClass('active')
+				// $('.header').removeClass('active')
 				$('.header').css('padding-right', '')
 				$('body').css('padding-right', '')
 				$('body').removeClass('overflow-hidden')
 			}else{
 				$(this).addClass('active')
-				$('.header').addClass('active')
+				// $('.header').addClass('active')
 				$('.header').css('padding-right', getScrollbarWidth() + 'px')
 				$('body').css('padding-right', getScrollbarWidth() + 'px')
 				$('body').addClass('overflow-hidden')
@@ -73,6 +78,7 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 	/* Window on resize Event */
 	$(window).on('resize', function () {
 		calculateVerticalHeight()
+		calculateHeaderHeight()
     })
 
 })(jQuery)

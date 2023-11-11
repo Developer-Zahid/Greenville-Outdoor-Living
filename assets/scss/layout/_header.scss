@@ -6,12 +6,129 @@
         background-color: $color-secondary;
     }
 
-    .navbar-brand__image{
-        @include max-xl{
-            max-height: toRem(70);
+    .navbar{
+        &-brand__image{
+            @include max-xl{
+                max-height: toRem(70);
+            }
+            @include max-sm{
+                max-height: toRem(50);
+            }
         }
-        @include max-sm{
-            max-height: toRem(50);
+
+        &__toggler{
+            @extend %stacking-context;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: toRem(40);
+            height: toRem(25);
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+
+            &__bar{
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                border-radius: 5rem;
+                background-color: $color-white;
+                transition: transform .2s $transition-ease;
+
+                &:first-of-type{
+                    transform: translateY(toRem(-10)) rotate(0);
+                }
+                &:last-of-type{
+                    transform: translateY(toRem(10)) rotate(0);
+                }
+            }
+
+            &:active,
+            &:focus-visible
+            {
+                .navbar__toggler__bar{
+                    background-color: $color-primary;
+                }
+            }
+        }
+        
+        &__list{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: toRem(10);
+        }
+
+        &__link{
+            @extend %stacking-context;
+            color: $color-white;
+            font-size: toRem(30);
+            @include min-xl{
+                font-size: toRem(60);
+            }
+            padding-left: toRem(10);
+            padding-right: toRem(40);
+            @extend %fw-bold;
+            @extend %text-uppercase;
+
+            &.active{
+                font-style: italic;
+            }
+
+            &::before{
+                @extend %common-pseudo;
+                top: 50%;
+                left: 0;
+                transform-origin: left;
+                transform: translateY(-50%) scaleX(0);
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color-tertiary-rgb, 0.5);
+                transition: transform .2s $transition-ease;
+                z-index: -1;
+            }
+
+            &.active::before,
+            &:hover::before,
+            &:focus::before
+            {
+                transform: translateY(-50%) scaleX(1);
+            }
+        }
+    }
+}
+
+.offcanvas{
+    --bs-offcanvas-bg: #{$color-secondary};
+
+    @include min-xl{
+        --bs-offcanvas-width: 45vw;
+    }
+
+    &-backdrop.show{
+        opacity: 0.8;
+    }
+
+    &-title{
+        background-color: $color-primary;
+    }
+
+    .close-btn{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: toRem(40);
+        height: toRem(40);
+        font-size: toRem(30);
+        color: $color-white;
+        background-color: $color-tertiary;
+        border: 0;
+
+        &:active,
+        &:focus-visible
+        {
+            color: $color-black-300;
+            background-color: $color-primary;
         }
     }
 }

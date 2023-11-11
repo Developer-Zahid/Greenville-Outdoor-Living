@@ -54,9 +54,27 @@
 				<a class="navbar-brand" href="./">
 					<img class="navbar-brand__image img-fluid" src="./assets/images/logo/logo.png" alt="logo" height="90">
 				</a>
-				<button type="button" class="navbar__toggler" data-toggle="menu">
-					<i class="fa-solid fa-bars"></i>
+				<button type="button" class="navbar__toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+					<span class="navbar__toggler__bar"></span>
+					<span class="navbar__toggler__bar"></span>
+					<span class="navbar__toggler__bar"></span>
 				</button>
+				<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+					<div class="offcanvas-header">
+						<span>&#32;</span>
+						<button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+					</div>
+					<div class="offcanvas-body">
+						<div class="navbar__list">
+							<a href="./" class="navbar__link active">Home</a>
+							<a href="#!" class="navbar__link">Our Services</a>
+							<a href="#!" class="navbar__link">About Us</a>
+							<a href="#!" class="navbar__link">Contact Us</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</nav>
 	</header>
