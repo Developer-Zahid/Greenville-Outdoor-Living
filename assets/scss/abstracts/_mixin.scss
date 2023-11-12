@@ -93,6 +93,20 @@
     }
 }
 
+//max-xxl
+@mixin max-xxl {
+    @media (max-width: 1599.98px) {
+        @content;
+    }
+}
+
+//min-xxl
+@mixin min-xxxl {
+    @media (min-width: 1600px) {
+        @content;
+    }
+}
+
 @mixin hover {
     @media (hover: hover) {
         @content;

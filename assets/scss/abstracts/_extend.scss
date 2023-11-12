@@ -1,5 +1,5 @@
 %transition{
-    transition: all ease-in-out .15s;
+    transition: all 0.15s $transition-ease;
 }
 
 %stacking-context{
@@ -74,4 +74,22 @@
 
 %isolation{
     isolation: isolate;
+}
+
+%icon-circle{
+    --_size: #{toRem(100)};
+    @extend %stacking-context;
+
+    &::before{
+        @extend %common-pseudo;
+        z-index: -1;
+        left: 0;
+        bottom: 0;
+        transform: translate(-15%,15%) scale(1);
+        width: var(--_size);
+        height: var(--_size);
+        border-radius: 100rem;
+        background-color: $color-white-cream;
+        transition: all 0.2s $transition-ease--bounce;
+    }
 }

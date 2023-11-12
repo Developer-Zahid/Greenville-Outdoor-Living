@@ -1,8 +1,8 @@
 /* Banner Section Style */
 .banner{
     min-height: calc(var(--vh) * 100);
-    padding-top: toRem(90);
-    padding-bottom: toRem(90);
+    padding-top: var(--header-size);
+    padding-bottom: var(--header-size);
     transition: min-height .3s $transition-ease;
     @extend %isolation;
 
@@ -47,6 +47,35 @@
 
         &__text{
             background-color: rgba($color-secondary-rgb, 0.8);
+        }
+    }
+
+    &__bottom{
+        &__icon{
+            @extend %select-none;
+            @include max-xs{
+                max-height: toRem(22)
+            }
+            @include motion{
+                animation: scroll 2s $transition-ease--bounce infinite;
+
+                @keyframes scroll {
+                    0%,100%{
+                        transform: translateY(0);
+                    }
+                    50%{
+                        transform: translateY(40%);
+                    }
+                }
+            }
+
+        }
+
+        &__text{
+            font-size: toRem(14);
+            @include min-sm{
+                font-size: toRem(18);
+            }
         }
     }
 }

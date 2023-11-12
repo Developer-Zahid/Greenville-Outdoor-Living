@@ -27,12 +27,16 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 	}
 
 	function calculateVerticalHeight() {
-		var vh = window.innerHeight * 0.01;
-		document.documentElement.style.setProperty('--vh', vh + 'px');
+		var vh = window.innerHeight * 0.01
+		document.documentElement.style.setProperty('--vh', vh + 'px')
 	}
 
 	function calculateHeaderHeight(){
 		$('html').css('--header-size', $('header').innerHeight() +'px')
+	}
+
+	function calculateNavbarOffsetDistance(){
+		$('.navbar-nav').css('--_navbar-offset-right', ($(document).width() - $('.navbar-nav').get(0).getBoundingClientRect().right) +'px')
 	}
 
 	/* Window on load Event */
@@ -44,18 +48,17 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 	$(document).ready(function () {
 		calculateVerticalHeight()
 		calculateHeaderHeight()
+		calculateNavbarOffsetDistance()
 		getScrollbarWidth()
 
 		$('[data-toggle="menu"').on('click', function(){
 			if($(this).hasClass('active')){
 				$(this).removeClass('active')
-				// $('.header').removeClass('active')
 				$('.header').css('padding-right', '')
 				$('body').css('padding-right', '')
 				$('body').removeClass('overflow-hidden')
 			}else{
 				$(this).addClass('active')
-				// $('.header').addClass('active')
 				$('.header').css('padding-right', getScrollbarWidth() + 'px')
 				$('body').css('padding-right', getScrollbarWidth() + 'px')
 				$('body').addClass('overflow-hidden')
@@ -66,12 +69,12 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 
 	/* Window on scroll Event */
 	$(window).on("scroll", function () {
-		let scrolling = $(this).scrollTop();
+		let scrolling = $(this).scrollTop()
 		const maxHeaderScroll = 100
 		if (scrolling > maxHeaderScroll) {
-			$(".header").addClass('sticky');
+			$(".header").addClass('sticky')
 		} else {
-			$(".header").removeClass('sticky');
+			$(".header").removeClass('sticky')
 		}
 	})
 
@@ -79,6 +82,7 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 	$(window).on('resize', function () {
 		calculateVerticalHeight()
 		calculateHeaderHeight()
+		calculateNavbarOffsetDistance()
     })
 
 })(jQuery)

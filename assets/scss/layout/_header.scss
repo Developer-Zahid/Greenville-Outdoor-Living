@@ -2,12 +2,10 @@
 .header{
     transition: background-color .2s $transition-ease;
 
-    &.sticky{
-        background-color: $color-secondary;
-    }
-
     .navbar{
         &-brand__image{
+            transition: all 0.2s $transition-ease;
+
             @include max-xl{
                 max-height: toRem(70);
             }
@@ -19,6 +17,9 @@
         &__toggler{
             @extend %stacking-context;
             display: inline-flex;
+            @include min-xl{
+                display: none;
+            }
             align-items: center;
             justify-content: center;
             width: toRem(40);
@@ -52,24 +53,43 @@
             }
         }
         
-        &__list{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+        &-nav{
             gap: toRem(10);
+
+            @include min-xl{
+                position: relative;
+                background-color: rgba($color-secondary-rgb, 0.8);
+                padding: toRem(15);
+
+                &::after{
+                    content: '';
+                    position: absolute;
+                    left: 100%;
+                    top: 0;
+                    bottom: 0;
+                    width: var(--_navbar-offset-right);
+                    background-color: inherit;
+                }
+            }
         }
 
         &__link{
             @extend %stacking-context;
-            color: $color-white;
-            font-size: toRem(30);
-            @include min-xl{
-                font-size: toRem(60);
-            }
-            padding-left: toRem(10);
-            padding-right: toRem(40);
             @extend %fw-bold;
             @extend %text-uppercase;
+            color: $color-white;
+            font-size: toRem(30);
+            padding-left: toRem(10);
+            @include max-lg{
+                padding-right: toRem(30);
+            }
+            @include max-xs{
+                padding-right: toRem(10);
+            }
+            @include min-xl{
+                font-size: toRem(25);
+                padding-right: toRem(10);
+            }
 
             &.active{
                 font-style: italic;
@@ -84,7 +104,7 @@
                 width: 100%;
                 height: 100%;
                 background-color: rgba($color-tertiary-rgb, 0.5);
-                transition: transform .2s $transition-ease;
+                transition: transform 0.2s $transition-ease;
                 z-index: -1;
             }
 
@@ -93,6 +113,19 @@
             &:focus::before
             {
                 transform: translateY(-50%) scaleX(1);
+            }
+        }
+    }
+
+    &.sticky{
+        background-color: $color-secondary;
+
+        .navbar-brand__image{
+            @include min-md{
+                height: toRem(50);
+            }
+            @include min-xxl{
+                height: toRem(70);
             }
         }
     }
@@ -130,5 +163,11 @@
             color: $color-black-300;
             background-color: $color-primary;
         }
+    }
+}
+
+@include min-xl{
+    .navbar-expand-xl .offcanvas{
+        flex-grow: unset;
     }
 }

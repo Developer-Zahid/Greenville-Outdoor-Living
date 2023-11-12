@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
 
 // SCSS Variable's
 $scss-font-primary: 'Cormorant Garamond', serif;
@@ -11,6 +11,9 @@ $scss-color-secondary:#66695b;
 $scss-color-secondary-rgb: toRGB($scss-color-secondary);
 $scss-color-tertiary:#ada78e;
 $scss-color-tertiary-rgb: toRGB($scss-color-tertiary);
+$scss-color-white-500: #f5f5f5;
+$scss-color-white-500-rgb: toRGB($scss-color-white-500);
+
 
 
 // CSS Variable's
@@ -21,6 +24,7 @@ $scss-color-tertiary-rgb: toRGB($scss-color-tertiary);
     --color-secondary-rgb: #{$scss-color-secondary-rgb};
     --color-tertiary: #{$scss-color-tertiary};
     --color-tertiary-rgb: #{$scss-color-tertiary-rgb};
+    --color-white-500-rgb: #{$scss-color-white-500-rgb};
 
     --font-primary: #{$scss-font-primary};
     --font-secondary: #{$scss-font-secondary};
@@ -41,8 +45,11 @@ $color-white:#ffffff;
 
 $color-black-300:#333333;
 $color-white-500:#f5f5f5;
+$color-white-500-rgb: var(--color-white-500-rgb);
+$color-white-cream: #fffcf1;
 $color-gray-600:#666666;
 $color-gray-800:#8c8c8c;
 
 $gutter: 28px;
 $transition-ease: cubic-bezier(.21,.01,.21,.96);
+$transition-ease--bounce: cubic-bezier(0.34, 1.56, 0.64, 1);

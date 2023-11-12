@@ -8,7 +8,7 @@
 	@include min-md{
 		--bs-btn-padding-y: #{toRem(15)};
 		--bs-btn-padding-x: #{toRem(30)};
-		--bs-btn-font-size: #{toRem(35)};
+		--bs-btn-font-size: #{toRem(30)};
 	}
 	--bs-btn-font-family: #{$font-primary};
 	--bs-btn-font-weight: 600;
@@ -50,14 +50,26 @@
 }
 
 .btn-outline-primary{
-	--bs-btn-color: #{$color-primary};
-	--bs-btn-border-color: #{$color-primary};
-	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-color: #{$color-black-300};
 	--bs-btn-hover-bg: #{$color-primary};
 	--bs-btn-hover-border-color: #{$color-primary};
-	--bs-btn-active-color: #fff;
-	--bs-btn-active-bg: #{$color-primary};
-	--bs-btn-active-border-color: #{$color-primary};
+	--bs-btn-active-color: var(--bs-btn-hover-color);
+	--bs-btn-active-bg: var(--bs-btn-hover-bg);
+	--bs-btn-active-border-color: var(--bs-btn-hover-border-color);
+
+	&--light,
+	&--dark
+	{
+		--bs-btn-border-color: var(--bs-btn-color);
+	}
+	
+	&--light{
+		--bs-btn-color: #{$color-white};
+	}
+
+	&--dark{
+		--bs-btn-color: #{$color-black-300};
+	}
 
 	&:focus{
 		color: var(--bs-btn-hover-color);
