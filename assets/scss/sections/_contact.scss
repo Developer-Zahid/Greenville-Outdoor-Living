@@ -1,0 +1,29 @@
+/* Contact Section Style */
+.contact{
+    &__figure{
+        box-shadow: 0 0 toRem(40) rgba($color-black, $alpha: 0.2);
+        @include min-xl{
+            margin-top: toRem(-115);
+        }
+
+        &__map{
+            @extend %stacking-context;
+            padding-top: 100%;
+            @include min-sm{
+                padding-top: 60%;
+            }
+            @include min-xl{
+                padding-top: 164%;
+            }
+
+            *{
+                @extend %full-width;
+                filter: grayscale(1);
+            }
+        }
+
+        .btn{
+            width: max-content;
+        }
+    }
+}

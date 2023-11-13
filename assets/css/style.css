@@ -241,12 +241,12 @@ p {
   transition: all 0.15s cubic-bezier(0.21, 0.01, 0.21, 0.96);
 }
 
-.testimonial__card__figure, .works__grid__item, .profile__figure, .services__card__figure, .about__figure, .header .navbar__link, .header .navbar__toggler, .services__block__icon {
+.testimonial__card__figure, .works__grid__item, .profile__figure, .services__card__figure, .about__figure, .contact__figure__map, .header .navbar__link, .header .navbar__toggler, .services__block__icon {
   position: relative;
   isolation: isolate;
 }
 
-.testimonial__card__figure__bg, .works__grid__item__image, .profile__figure__bg, .profile__figure::after, .services__card__figure__bg, .services__card__figure::after, .about__figure__bg, .full-background, .full-background::after, .full-background__preview {
+.testimonial__card__figure__bg, .works__grid__item__image, .profile__figure__bg, .profile__figure::after, .services__card__figure__bg, .services__card__figure::after, .about__figure__bg, .contact__figure__map *, .full-background, .full-background::after, .full-background__preview {
   position: absolute;
   top: 0;
   right: 0;
@@ -269,7 +269,7 @@ p {
   pointer-events: none;
 }
 
-.footer__bottom__text, .footer__block__text, .footer__block__link, p {
+.footer__bottom__text, .footer__block__text, .footer__block__link, .form-control, .form-select, p {
   font-weight: 300;
 }
 
@@ -414,8 +414,86 @@ p {
 }
 
 /* Common Form's Style */
-/* Common Card's Style */
-/* Header Section Style */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: unset;
+  -webkit-transition: background-color 5000s;
+  transition: background-color 5000s;
+}
+
+select {
+  cursor: pointer;
+}
+
+.form-control, .form-select {
+  --bs-border-radius: 0;
+  --bs-body-bg: #f5f5f5;
+  --bs-border-color: rgba(150, 150, 150, 0.25);
+  color: #8c8c8c;
+  font-size: 1rem;
+  padding: 0.9375rem;
+  font-family: var(--font-secondary);
+}
+@media (min-width: 992px) {
+  .form-control, .form-select {
+    font-size: 1.25rem;
+    padding: 1.5625rem 0.9375rem;
+  }
+}
+.form-control::-webkit-input-placeholder, .form-select::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.form-control:-moz-placeholder, .form-select:-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.form-control::-moz-placeholder, .form-select::-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder, .form-select:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.form-control::-ms-input-placeholder, .form-select::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.form-control::placeholder, .form-select::placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.form-control:focus, .form-select:focus {
+  color: #000000;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #777777;
+}
+.form-control option, .form-select option {
+  font-size: 0.875rem;
+}
+
+/* Common Card's Style */ /* Header Section Style */
 .header {
   -webkit-transition: background-color 0.2s cubic-bezier(0.21, 0.01, 0.21, 0.96);
   -o-transition: background-color 0.2s cubic-bezier(0.21, 0.01, 0.21, 0.96);
@@ -877,6 +955,39 @@ p {
   .banner__bottom__text {
     font-size: 1.125rem;
   }
+}
+
+/* Contact Section Style */
+.contact__figure {
+  -webkit-box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 1200px) {
+  .contact__figure {
+    margin-top: -7.1875rem;
+  }
+}
+.contact__figure__map {
+  padding-top: 100%;
+}
+@media (min-width: 576px) {
+  .contact__figure__map {
+    padding-top: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  .contact__figure__map {
+    padding-top: 164%;
+  }
+}
+.contact__figure__map * {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+.contact__figure .btn {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 /* Home Page Styles */

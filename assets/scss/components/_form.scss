@@ -1,1 +1,63 @@
 /* Common Form's Style */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration
+{
+	display: none;
+}
+
+input:-webkit-autofill{
+	-webkit-text-fill-color: unset;
+	transition: background-color 5000s;
+}
+
+select{
+    cursor: pointer;
+}
+
+.form{
+    &-control,
+    &-select
+    {
+        --bs-border-radius: 0;
+        --bs-body-bg: #{$color-white-500};
+        --bs-border-color: #{rgba($color: #969696, $alpha: 0.25)};
+        color: #8c8c8c;
+        font-size: toRem(16);
+        padding: toRem(15);
+        @include min-lg{
+            font-size: toRem(20);
+            padding: toRem(25) toRem(15);
+        }
+        font-family: $font-secondary;
+        @extend %fw-light;
+        
+        &::placeholder{
+            color: currentColor;
+            opacity: 1;
+        }
+        &:focus{
+            color: $color-black;
+            box-shadow: none;
+            border-color: #777777;
+        }
+
+        option{
+            font-size: toRem(14);
+        }
+    }
+}

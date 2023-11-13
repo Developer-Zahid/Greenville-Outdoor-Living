@@ -51,20 +51,14 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 		calculateNavbarOffsetDistance()
 		getScrollbarWidth()
 
-		$('[data-toggle="menu"').on('click', function(){
-			if($(this).hasClass('active')){
-				$(this).removeClass('active')
-				$('.header').css('padding-right', '')
-				$('body').css('padding-right', '')
-				$('body').removeClass('overflow-hidden')
-			}else{
-				$(this).addClass('active')
-				$('.header').css('padding-right', getScrollbarWidth() + 'px')
-				$('body').css('padding-right', getScrollbarWidth() + 'px')
-				$('body').addClass('overflow-hidden')
-			}
-		})
-
+		/* lazy load map iframe */
+		if($('[data-iframe-src]').length){
+			setTimeout(()=>{
+				$('[data-iframe-src]').each(function(){
+					$(this).html(`<iframe src="${$(this).attr("data-iframe-src")}" style="border:0;" allowfullscreen frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`)
+				})
+			}, 2500)
+		}
 	})
 
 	/* Window on scroll Event */
