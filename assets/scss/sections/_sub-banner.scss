@@ -1,0 +1,26 @@
+/* Sub Banner Section Style */
+.sub-banner{
+    @extend %min-full-screen;
+    @extend %isolation;
+
+    &__title{
+        font-size: clamp(toRem(40), 7vw, toRem(120));
+        @extend %fw-semibold;
+
+        &__text{
+            position: relative;
+            display: inline-block;
+            color: $color-white;
+            background-color: rgba($color-secondary-rgb, 0.8);
+            padding: toRem(10) toRem(30);
+
+            &::before{
+                content: '';
+                @extend %full-width;
+                z-index: -1;
+                background-color: rgba($color-tertiary-rgb, 0.8);
+                transform: translate(-5%, -20%);
+            }
+        }
+    }
+}

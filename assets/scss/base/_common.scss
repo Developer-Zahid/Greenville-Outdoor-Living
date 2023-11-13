@@ -153,6 +153,14 @@ p{
 	--bs-light-rgb: #{$color-white-500-rgb};
 }
 
+.ff-primary{
+	font-family: $font-primary;
+}
+
+.ff-secondary{
+	font-family: $font-secondary;
+}
+
 .full-background{
 	@extend %full-width;
 	z-index: -1;

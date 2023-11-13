@@ -55,7 +55,7 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 		if($('[data-iframe-src]').length){
 			setTimeout(()=>{
 				$('[data-iframe-src]').each(function(){
-					$(this).html(`<iframe src="${$(this).attr("data-iframe-src")}" style="border:0;" allowfullscreen frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`)
+					$(this).html(`<iframe src="${$(this).attr("data-iframe-src")}" style="border:0;" allowfullscreen frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>`)
 				})
 			}, 2500)
 		}

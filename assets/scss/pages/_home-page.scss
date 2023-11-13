@@ -1,4 +1,82 @@
 /* Home Page Styles */
+.banner{
+    @extend %min-full-screen;
+    @extend %isolation;
+
+    @include max-md{
+        text-align: center;
+    }
+
+    &__sub-title,
+    &__title
+    {
+        color: $color-white;
+        text-transform: capitalize;
+        
+        &__text{
+            @include max-xs{
+                padding: toRem(5);
+            }
+            @include min-sm{
+                padding: toRem(10);
+                display: inline-block;
+            }
+            @include min-lg{
+                padding-right: toRem(50);
+            }
+        }
+
+    }
+
+    &__sub-title{
+        font-style: italic;
+        font-size: clamp(toRem(25), 6vw, toRem(100));
+        
+        &__text{
+            background-color: rgba($color-tertiary-rgb, 0.8);
+        }
+    }
+
+    &__title{
+        font-size: clamp(toRem(50), 7vw, toRem(120));
+        @extend %fw-semibold;
+        margin-bottom: toRem(12);
+
+        &__text{
+            background-color: rgba($color-secondary-rgb, 0.8);
+        }
+    }
+
+    &__bottom{
+        &__icon{
+            @extend %select-none;
+            @include max-xs{
+                max-height: toRem(22)
+            }
+            @include motion{
+                animation: scroll 2s $transition-ease--bounce infinite;
+
+                @keyframes scroll {
+                    0%,100%{
+                        transform: translateY(0);
+                    }
+                    50%{
+                        transform: translateY(40%);
+                    }
+                }
+            }
+
+        }
+
+        &__text{
+            font-size: toRem(14);
+            @include min-sm{
+                font-size: toRem(18);
+            }
+        }
+    }
+}
+
 .about{
     &__grid{
         display: grid;

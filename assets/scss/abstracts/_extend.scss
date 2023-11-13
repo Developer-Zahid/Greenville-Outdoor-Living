@@ -17,6 +17,13 @@
     height: 100%;
 }
 
+%min-full-screen{
+    min-height: calc(var(--vh) * 100);
+    padding-top: var(--header-size);
+    padding-bottom: var(--header-size);
+    transition: min-height .3s $transition-ease;
+}
+
 %common-pseudo{
     content: '';
     position: absolute;
