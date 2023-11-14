@@ -149,6 +149,10 @@ p{
 	--bs-secondary-rgb: #{$color-secondary-rgb};
 }
 
+.bg-tertiary{
+	background-color: $color-tertiary;
+}
+
 .bg-light{
 	--bs-light-rgb: #{$color-white-500-rgb};
 }

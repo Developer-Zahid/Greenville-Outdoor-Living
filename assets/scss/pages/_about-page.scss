@@ -31,3 +31,30 @@
         }
     }
 }
+
+.divider{
+    &__container{
+        transform: translateX(-50%) translateY(-60%);
+    }
+    &__title__text{
+        padding: toRem(15);
+        background-color: #f5f4f1;
+        // font-size: toRem(57);
+        @include min-lg{
+            font-size: toRem(40);
+        }
+        @include min-xxl{
+            font-size: toRem(57);
+            padding: toRem(15) toRem(70);
+        }
+
+        &::before{
+            content: '';
+            @extend %full-width;
+            background-color: $color-tertiary;
+            z-index: -1;
+            top: toRem(10);
+            left: toRem(10);
+        }
+    }
+}
