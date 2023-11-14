@@ -81,6 +81,10 @@
     &__block{
         margin-bottom: $gutter;
 
+        &--bordered{
+            border: 2px solid $color-tertiary;
+        }
+
         &__icon{
             @extend %icon-circle;
 
