@@ -212,7 +212,14 @@ p {
   margin-bottom: 0;
 }
 .full-background::after {
+  content: "";
   background-color: rgba(0, 0, 0, 0.33);
+}
+.full-background--linear::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.7)));
+  background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
 }
 .check-list__item {
   display: -webkit-box;
@@ -249,12 +256,12 @@ p {
   transition: all 0.15s cubic-bezier(0.21, 0.01, 0.21, 0.96);
 }
 
-.testimonial__card__figure, .works__grid__item, .profile__figure, .services__card__figure, .about__figure, .contact__figure__map, .header .navbar__link, .header .navbar__toggler, .services__block__icon {
+.details__figure, .testimonial__card__figure, .works__grid__item, .profile__figure, .services__card__figure, .about__figure, .contact__figure__map, .header .navbar__link, .header .navbar__toggler, .services__block__icon {
   position: relative;
   isolation: isolate;
 }
 
-.testimonial__card__figure__bg, .works__grid__item__image, .profile__figure__bg, .profile__figure::after, .services__card__figure__bg, .services__card__figure::after, .about__figure__bg, .sub-banner__title__text::before, .contact__figure__map *, .full-background, .full-background::after, .full-background__preview {
+.details__figure__bg, .testimonial__card__figure__bg, .works__grid__item__image, .profile__figure__bg, .profile__figure::after, .services__card__figure__bg, .services__card__figure::after, .about__figure__bg, .sub-banner__title__text::before, .contact__figure__map *, .full-background, .full-background::after, .full-background__preview {
   position: absolute;
   top: 0;
   right: 0;
@@ -275,12 +282,12 @@ p {
   transition: min-height 0.3s cubic-bezier(0.21, 0.01, 0.21, 0.96);
 }
 
-.profile__figure::after, .services__card__figure::after, .header .navbar__link::before, .services__block__icon::before, .full-background::after {
+.profile__figure::after, .services__card__figure::after, .header .navbar__link::before, .services__block__icon::before {
   content: "";
   position: absolute;
 }
 
-.works__grid__item__image, .profile__figure__bg, .services__card__figure__bg, .banner__bottom__icon, .full-background__preview, .check-list__item__image {
+.details__figure__bg, .works__grid__item__image, .profile__figure__bg, .services__card__figure__bg, .banner__bottom__icon, .full-background__preview, .check-list__item__image {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -371,18 +378,28 @@ p {
   --bs-btn-padding-x: 0.9375rem;
   --bs-btn-font-size: 0.9375rem;
 }
+.btn-lg {
+  --bs-btn-border-radius: 0;
+}
+@media (min-width: 1200px) {
+  .btn-lg {
+    --bs-btn-font-size: 3.4375rem;
+  }
+}
 .btn__icon {
   font-size: 110%;
 }
 
 .btn-primary,
-.btn-secondary {
+.btn-secondary,
+.btn-light {
   --bs-btn-active-color: var(--bs-btn-hover-color);
   --bs-btn-active-bg: var(--bs-btn-hover-bg);
   --bs-btn-active-border-color: var(--bs-btn-hover-border-color);
 }
 .btn-primary:focus,
-.btn-secondary:focus {
+.btn-secondary:focus,
+.btn-light:focus {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
@@ -419,13 +436,21 @@ p {
   border-color: var(--bs-btn-hover-bg);
 }
 
+.btn-secondary,
+.btn-light {
+  --bs-btn-hover-color: #333333;
+  --bs-btn-hover-bg: var(--color-primary);
+  --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+}
+
 .btn-secondary {
   --bs-btn-color: #ffffff;
   --bs-btn-bg: var(--color-secondary);
   --bs-btn-border-color: var(--bs-btn-bg);
-  --bs-btn-hover-color: #333333;
-  --bs-btn-hover-bg: var(--color-primary);
-  --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+}
+
+.btn-light {
+  --bs-btn-color: var(--color-secondary);
 }
 
 .scroll-top {
@@ -440,7 +465,7 @@ p {
   height: 1.875rem;
   font-size: 1.1rem;
   color: #ffffff;
-  background-color: var(--color-primary);
+  background-color: var(--color-tertiary);
 }
 .scroll-top__btn:active {
   background-color: var(--color-secondary);
@@ -526,7 +551,8 @@ select {
   font-size: 0.875rem;
 }
 
-/* Common Card's Style */ /* Header Section Style */
+/* Common Card's Style */
+/* Header Section Style */
 .header {
   -webkit-transition: background-color 0.2s cubic-bezier(0.21, 0.01, 0.21, 0.96);
   -o-transition: background-color 0.2s cubic-bezier(0.21, 0.01, 0.21, 0.96);
@@ -1524,5 +1550,35 @@ select {
 @media (min-width: 1400px) {
   .testimonial__card__title {
     font-size: 2.125rem;
+  }
+}
+
+.details {
+  background-repeat: no-repeat;
+  background-size: 29%;
+  background-position: center;
+}
+@media (min-width: 992px) {
+  .details {
+    background-position: 60% 125%;
+  }
+}
+.details__figure {
+  padding-top: 100%;
+}
+@media (min-width: 992px) {
+  .details__figure {
+    padding-top: 133%;
+    margin-top: 6.25rem;
+  }
+}
+.details__content {
+  padding: 1.25rem;
+  border: 1px solid var(--color-tertiary);
+}
+@media (min-width: 992px) {
+  .details__content {
+    padding: 1.25rem 2.5rem;
+    margin-left: -3.125rem;
   }
 }/*# sourceMappingURL=style.css.map */

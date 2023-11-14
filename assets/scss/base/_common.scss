@@ -167,9 +167,15 @@ p{
 	margin-bottom: 0;
 
 	&::after{
+		content: '';
 		@extend %full-width;
-		@extend %common-pseudo;
 		background-color: rgba($color-black, $alpha: 0.33);
+	}
+
+	&--linear{
+		&::after{
+			background-image: linear-gradient(transparent, rgba($color-black, $alpha: 0.7));
+		}
 	}
 
 	&__preview{

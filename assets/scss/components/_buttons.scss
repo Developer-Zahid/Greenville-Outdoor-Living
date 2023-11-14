@@ -24,6 +24,12 @@
 		--bs-btn-padding-x: #{toRem(15)};
 		--bs-btn-font-size: #{toRem(15)};
 	}
+	&-lg{
+		--bs-btn-border-radius: 0;
+		@include min-xl{
+			--bs-btn-font-size: #{toRem(55)};
+		}
+	}
 
 	&__icon{
 		font-size: 110%;
@@ -31,7 +37,8 @@
 }
 
 .btn-primary,
-.btn-secondary
+.btn-secondary,
+.btn-light
 {
 	--bs-btn-active-color: var(--bs-btn-hover-color);
 	--bs-btn-active-bg: var(--bs-btn-hover-bg);
@@ -82,14 +89,23 @@
 	}
 }
 
+.btn-secondary,
+.btn-light
+{
+	--bs-btn-hover-color: #{$color-black-300};
+	--bs-btn-hover-bg: #{$color-primary};
+	--bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+}
+
 .btn-secondary{
 	--bs-btn-color: #{$color-white};
 	--bs-btn-bg: #{$color-secondary};
 	--bs-btn-border-color: var(--bs-btn-bg);
 
-	--bs-btn-hover-color: #{$color-black-300};
-	--bs-btn-hover-bg: #{$color-primary};
-	--bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+}
+
+.btn-light{
+	--bs-btn-color: #{$color-secondary};
 }
 
 .scroll-top{
@@ -104,7 +120,7 @@
 		height: toRem(30);
 		font-size: 1.1rem;
 		color: $color-white;
-		background-color: $color-primary;
+		background-color: $color-tertiary;
 
 		&:active{
 			background-color: $color-secondary;

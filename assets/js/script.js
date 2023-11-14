@@ -15,7 +15,6 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 (function ($) {
     "use strict"
 
-	/* Preloader init */
 	function preLoader(){
 		if($(".preloader").length > 0){
 			$(".preloader").delay(300).fadeOut("slow")
@@ -51,6 +50,11 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 		calculateNavbarOffsetDistance()
 		getScrollbarWidth()
 
+		// scroll top btn function
+		$(".scroll-top").on("click", function () {
+			$("html,body").animate({scrollTop: 0},50)
+		});
+
 		/* lazy load map iframe */
 		if($('[data-iframe-src]').length){
 			setTimeout(()=>{
@@ -67,8 +71,10 @@ Author Email: 	    dgtaltechzahidhasan@gmail.com
 		const maxHeaderScroll = 100
 		if (scrolling > maxHeaderScroll) {
 			$(".header").addClass('sticky')
+			$(".scroll-top").slideDown()
 		} else {
 			$(".header").removeClass('sticky')
+			$(".scroll-top").slideUp()
 		}
 	})
 
