@@ -256,12 +256,12 @@ p {
   transition: all 0.15s cubic-bezier(0.21, 0.01, 0.21, 0.96);
 }
 
-.details__figure, .testimonial__card__figure, .works__grid__item, .profile__figure, .about__figure, .contact__figure__map, .header .navbar__link, .header .navbar__toggler, .services__card__figure, .services__block__icon {
+.category__figure, .details__figure, .testimonial__card__figure, .works__grid__item, .profile__figure, .about__figure, .contact__figure__map, .header .navbar__link, .header .navbar__toggler, .services__card__figure, .services__block__icon {
   position: relative;
   isolation: isolate;
 }
 
-.details__figure__bg, .testimonial__card__figure__bg, .works__grid__item__image, .profile__figure__bg, .profile__figure::after, .about__figure__bg, .sub-banner__title__text::before, .contact__figure__map *, .services__card__figure__bg, .services__card__figure::after, .full-background, .full-background::after, .full-background__preview {
+.category__figure__bg, .category__figure::after, .details__figure__bg, .testimonial__card__figure__bg, .works__grid__item__image, .profile__figure__bg, .profile__figure::after, .about__figure__bg, .sub-banner__title__text::before, .contact__figure__map *, .services__card__figure__bg, .services__card__figure::after, .full-background, .full-background::after, .full-background__preview {
   position: absolute;
   top: 0;
   right: 0;
@@ -287,7 +287,7 @@ p {
   position: absolute;
 }
 
-.details__figure__bg, .works__grid__item__image, .profile__figure__bg, .banner__bottom__icon, .services__card__figure__bg, .full-background__preview, .check-list__item__image {
+.category__figure__bg, .details__figure__bg, .works__grid__item__image, .profile__figure__bg, .banner__bottom__icon, .services__card__figure__bg, .full-background__preview, .check-list__item__image {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1593,4 +1593,15 @@ select {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 30%;
+}
+
+.category__figure {
+  padding-top: 67%;
+}
+.category__figure::after {
+  content: "";
+  background-image: -webkit-gradient(linear, left top, right top, from(#000000), to(transparent));
+  background-image: -moz-linear-gradient(left, #000000, transparent);
+  background-image: -o-linear-gradient(left, #000000, transparent);
+  background-image: linear-gradient(to right, #000000, transparent);
 }/*# sourceMappingURL=style.css.map */

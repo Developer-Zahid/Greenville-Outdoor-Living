@@ -4,3 +4,21 @@
     background-repeat: no-repeat;
     background-size: 30%;
 }
+
+.category{
+    &__figure{
+        @extend %stacking-context;
+        padding-top: 67%;
+
+        &::after{
+            content: '';
+            @extend %full-width;
+            background-image: linear-gradient(to right, $color-black, transparent);
+        }
+
+        &__bg{
+            @extend %full-width;
+            @extend %select-none;
+        }
+    }
+}
